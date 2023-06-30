@@ -25,47 +25,32 @@ table, th, td {
 }
 </style>
 <title>Page Title</title>
+<script> 
+const userAction = async () => { 
+  const response = await fetch("http://localhost:5000/patients?count=5");
+  const myJson = await response.json(); 
+
+  myJson.forEach(element => {
+    console.log(element.firstName);
+    var root = document.getElementById("root");
+    var html = root.innerHTML;
+    root.innerHTML += '</div><div class="display"><div>name = ' + element.firstName + '</div><div>Email = cbhng@rj.kxyr</div><div>NhsNum =8764512</div></div>';
+  });
+  }
+
+// window.onload = function(e) {
+// $().load("http://localhost:5000/patient?count=5");    
+//   }
+</script>
 </head>
 <body>
 <div>
 <div class="header"><h1>Patient Infomation</h1></div>
 
+<button onclick="userAction()">Click me for data</button>
 
-<div class="display">
-<div>name = Batman</div>
-<div>Email = cbhng@rj.kxyr</div>
-<div>NhsNum =8764512</div>
-</div>
+<div id="root">
 
-<div class="display">
-<div>name = Batman</div>
-<div>Email = cbhng@rj.kxyr</div>
-<div>NhsNum =8764512</div>
-</div>
-
-<div class="display">
-<div>name = Batman</div>
-<div>Email = cbhng@rj.kxyr</div>
-<div>NhsNum =8764512</div>
-</div>
-
-<div class="display">
-<div>name = Batman</div>
-<div>Email = cbhng@rj.kxyr</div>
-<div>NhsNum =8764512</div>
-</div>
-
-<div class="display">
-<div>name = Batman</div>
-<div>Email = cbhng@rj.kxyr</div>
-<div>NhsNum =8764512</div>
-</div>
-
-<div class="display">
-<div>name = Batman</div>
-<div>Email = cbhng@rj.kxyr</div>
-<div>NhsNum =8764512</div>
-</div>
 </div>
 </body>
 </html>
